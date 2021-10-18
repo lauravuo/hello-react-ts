@@ -18,9 +18,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
         with:
-          ref: master
+          ref: main
       - name: merge
         run: |
           git fetch --tags origin
           git merge $GITHUB_REF
-          git push origin master
+          git push origin main
