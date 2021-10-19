@@ -16,15 +16,9 @@ jobs:
         run: npm run test:lint
       - name: test
         run: CI=true npm test
-  hello_world_job:
+  license-scanner-test:
     runs-on: ubuntu-latest
     name: A job to test the license scan action
     steps:
-      - name: Hello world action step
-        id: hello
-        uses: lauravuo/licence-scan-js@v1
-        with:
-          who-to-greet: 'Mona the Octocat'
-      # Use the output from the `hello` step
-      - name: Get the output time
-        run: echo "The time was ${{ steps.hello.outputs.time }}"
+      - name: License scan
+        uses: lauravuo/licence-scan-js@v2
